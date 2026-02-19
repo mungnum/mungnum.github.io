@@ -101,14 +101,13 @@
 </head>
 <body>
 
-  <!-- Multi-layer Parallax Banner -->
   <section class="parallax-banner">
-    <div class="parallax-layer layer-back"></div>
-    <div class="parallax-layer layer-mid"></div>
-    <div class="parallax-layer layer-front"></div>
+    <div class="parallax-layer" style="background-image: url('./assets/header/testcave_background.png');" data-speed="1"></div>
+    <div class="parallax-layer" style="background-image: url('./assets/header/testcave_midground.png');" data-speed="0.5"></div>
+    <div class="parallax-layer" style="background-image: url('./assets/header/testcave_foreground.png');" data-speed="0"></div>
     <div class="parallax-content">
       <h1>Zach Super</h1>
-    </div>
+  </div>
   </section>
 
   <!-- Junk content to enable scrolling -->
@@ -148,7 +147,7 @@
   <script>
     // Multi-layer parallax effect
     const layers = [
-      {el: document.querySelector('.layer-back'), speed: 0.8},
+      {el: document.querySelector('.layer-back'), speed: 1},
       {el: document.querySelector('.layer-mid'), speed: 0.5},
       {el: document.querySelector('.layer-front'), speed: 0},
     ];

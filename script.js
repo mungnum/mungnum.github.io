@@ -1,12 +1,12 @@
-window.addEventListener("scroll", function () {
-  const scrollY = window.scrollY;
+// Select all banners
+document.querySelectorAll('.parallax-banner').forEach(banner => {
+  const layers = banner.querySelectorAll('.parallax-layer');
 
-  document.querySelector(".background").style.transform =
-    `translateY(${scrollY * 0.2}px)`;
-
-  document.querySelector(".mid").style.transform =
-    `translateY(${scrollY * 0.4}px)`;
-
-  document.querySelector(".foreground").style.transform =
-    `translateY(${scrollY * 0.6}px)`;
+  window.addEventListener('scroll', () => {
+    const offset = window.pageYOffset;
+    layers.forEach(layer => {
+      const speed = parseFloat(layer.dataset.speed) || 0.5; // default 0.5 if not set
+      layer.style.transform = `translateY(${offset * speed}px)`;
+    });
+  });
 });
