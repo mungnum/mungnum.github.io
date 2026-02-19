@@ -26,59 +26,69 @@
       cursor: pointer;
     }
 
-    /* Parallax Banner Styles */
+    /* Multi-layer Parallax Banner */
     .parallax-banner {
       position: relative;
       height: 80vh;
       overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: #fff;
     }
-    .parallax-bg {
+
+    .parallax-layer {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      height: 120%;
-      background-image: url('https://www.shutterstock.com/image-vector/background-game-cartoon-pixel-art-600nw-2604930167.jpg');
+      height: 100%;
+      background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
       transform: translateZ(0);
       will-change: transform;
-      z-index: 1;
     }
+
+    /* Banner Layers */
+    .layer-back {
+      z-index: 1;
+      background-image: url('./assets/header/testcave_background.png');
+    }
+    .layer-mid {
+      z-index: 2;
+      background-image: url('./assets/header/testcave_midground.png');
+    }
+    .layer-front {
+      z-index: 3;
+      background-image: url('./assets/header/testcave_foreground.png');
+    }
+
+    /* Foreground content */
     .parallax-content {
       position: relative;
-      z-index: 2;
-      max-width: 800px;
+      z-index: 4;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
       padding: 2rem;
     }
     .parallax-content h1 {
       font-size: 3rem;
       margin-bottom: 1rem;
     }
-    .parallax-content p {
-      font-size: 1.25rem;
-      margin-bottom: 1.5rem;
+
+    /* Junk content for scroll testing. */
+    .junk {
+      padding: 5rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
     }
-    .parallax-content button {
-      background-color: #fff;
-      color: #4f46e5;
-      padding: 0.75rem 2rem;
-      font-weight: 600;
-      border: none;
-      border-radius: 6px;
-      transition: transform 0.2s, background-color 0.3s;
-    }
-    .parallax-content button:hover {
-      background-color: #e0e7ff;
-      transform: translateY(-2px);
+    .junk p {
+      margin-bottom: 2rem;
     }
 
-    /* Responsive tweaks */
+    /* Responsive */
     @media(max-width: 768px){
       .parallax-content h1 {
         font-size: 2.25rem;
@@ -91,19 +101,63 @@
 </head>
 <body>
 
-  <!-- Parallax Banner Section -->
+  <!-- Multi-layer Parallax Banner -->
   <section class="parallax-banner">
-    <div class="parallax-bg"></div>
+    <div class="parallax-layer layer-back"></div>
+    <div class="parallax-layer layer-mid"></div>
+    <div class="parallax-layer layer-front"></div>
     <div class="parallax-content">
       <h1>Zach Super</h1>
     </div>
   </section>
 
+  <!-- Junk content to enable scrolling -->
+  <section class="junk">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et ligula in nunc bibendum fringilla a eu lectus.</p>
+    <p>Curabitur ultricies, sapien a fringilla tempor, arcu nisi placerat lorem, at convallis leo sapien vel lorem.</p>
+    <p>Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor.</p>
+    <p>Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet.</p>
+    <p>Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et ligula in nunc bibendum fringilla a eu lectus.</p>
+    <p>Curabitur ultricies, sapien a fringilla tempor, arcu nisi placerat lorem, at convallis leo sapien vel lorem.</p>
+    <p>Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor.</p>
+    <p>Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet.</p>
+    <p>Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et ligula in nunc bibendum fringilla a eu lectus.</p>
+    <p>Curabitur ultricies, sapien a fringilla tempor, arcu nisi placerat lorem, at convallis leo sapien vel lorem.</p>
+    <p>Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor.</p>
+    <p>Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet.</p>
+    <p>Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et ligula in nunc bibendum fringilla a eu lectus.</p>
+    <p>Curabitur ultricies, sapien a fringilla tempor, arcu nisi placerat lorem, at convallis leo sapien vel lorem.</p>
+    <p>Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor.</p>
+    <p>Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet.</p>
+    <p>Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et ligula in nunc bibendum fringilla a eu lectus.</p>
+    <p>Curabitur ultricies, sapien a fringilla tempor, arcu nisi placerat lorem, at convallis leo sapien vel lorem.</p>
+    <p>Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor.</p>
+    <p>Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet.</p>
+    <p>Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et ligula in nunc bibendum fringilla a eu lectus.</p>
+    <p>Curabitur ultricies, sapien a fringilla tempor, arcu nisi placerat lorem, at convallis leo sapien vel lorem.</p>
+    <p>Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor.</p>
+    <p>Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet.</p>
+    <p>Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
+  </section>
+
   <script>
-    const parallaxBg = document.querySelector('.parallax-bg');
+    // Multi-layer parallax effect
+    const layers = [
+      {el: document.querySelector('.layer-back'), speed: 0.2},
+      {el: document.querySelector('.layer-mid'), speed: 0.5},
+      {el: document.querySelector('.layer-front'), speed: 0.8},
+    ];
+
     window.addEventListener('scroll', () => {
       const offset = window.pageYOffset;
-      parallaxBg.style.transform = `translateY(${offset * 0.5}px)`;
+      layers.forEach(layer => {
+        layer.el.style.transform = `translateY(${offset * layer.speed}px)`;
+      });
     });
   </script>
 
